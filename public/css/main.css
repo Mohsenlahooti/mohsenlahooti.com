@@ -257,3 +257,128 @@ p { margin-bottom: 1rem; }
   text-transform: uppercase;
   margin-bottom: 1.5rem;
 }
+
+/* ─── About Layout (replaces old about styles) ──────────────── */
+.section-about {
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-start;
+  padding: 100px 0 80px;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 4rem;
+  align-items: start;
+  width: 100%;
+}
+
+/* Left column */
+.about-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-photo img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #21262d;
+  filter: grayscale(20%);
+  display: block;
+}
+
+.about-left-links {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.5rem;
+  margin-top: 2rem;
+  width: 100%;
+}
+
+.left-btn {
+  display: block;
+  padding: 0.4rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #8b949e;
+  border: 1px solid #21262d;
+  border-radius: 4px;
+  text-align: center;
+  transition: all 0.2s;
+}
+
+.left-btn:hover {
+  color: #ffffff;
+  border-color: #58a6ff;
+  background: rgba(88, 166, 255, 0.06);
+}
+
+/* Right column */
+.about-right {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.about-header {
+  margin-bottom: 1.5rem;
+}
+
+.about-role {
+  font-size: 1rem;
+  color: #58a6ff;
+  font-weight: 400;
+  margin-top: 0.4rem;
+  letter-spacing: 0.01em;
+}
+
+.about-body {
+  color: #8b949e;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  max-width: 600px;
+}
+
+.about-body p {
+  margin-bottom: 1rem;
+}
+
+/* News — soft section, stays within right column */
+.about-news {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #1e2229;
+  max-width: 600px;
+}
+
+.news-heading {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #484f58;
+  margin-bottom: 1.2rem;
+}
+
+/* ─── Responsive: stack on mobile ───────────────────────────── */
+@media (max-width: 640px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .about-left {
+    align-items: center;
+  }
+
+  .about-left-links {
+    width: 160px;
+  }
+}
