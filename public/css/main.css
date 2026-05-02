@@ -382,3 +382,95 @@ p { margin-bottom: 1rem; }
     width: 160px;
   }
 }
+
+/* ─── Research Page ─────────────────────────────────────────── */
+/*
+ * Each .research-section is one research area.
+ * Separated by a soft border matching the news section style.
+ * To add a new section: duplicate a .research-section block in
+ * themes/ml/layouts/research/list.html
+ */
+.research-section {
+  padding: 3rem 0;
+  border-top: 1px solid #1e2229;
+}
+
+.research-section:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+
+/*
+ * Two-column grid: left holds thumbnail(s), right holds content.
+ * Change 180px to adjust thumbnail column width.
+ */
+.research-grid {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+/* Left column: stacked thumbnails */
+.research-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.research-thumb {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 4px;
+  border: 1px solid #21262d;
+  display: block;
+}
+
+/* Right column */
+.research-title {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ffffff;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  margin-bottom: 0.75rem;
+}
+
+.research-body {
+  color: #8b949e;
+  font-size: 0.9rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+
+/* Inline figures in right column */
+.research-figure {
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid #21262d;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+/* Inline video in right column */
+.research-video {
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid #21262d;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+/* ─── Responsive: stack research grid on mobile ─────────────── */
+@media (max-width: 640px) {
+  .research-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .research-thumb {
+    width: 100%;
+    max-width: 240px;
+  }
+}
