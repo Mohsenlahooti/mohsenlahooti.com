@@ -1,0 +1,21 @@
+{{ define "main" }}
+<section id="about" class="section-about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-photo">
+        <img src="/images/profile.jpg" alt="{{ .Site.Params.author }}">
+      </div>
+      <div class="about-text">
+        <h1>{{ .Site.Params.author }}</h1>
+        <p class="about-role">{{ .Site.Params.description }}</p>
+        {{ .Content }}
+        <div class="about-links">
+          <a href="/cv.pdf" class="btn" target="_blank">CV</a>
+          <a href="mailto:{{ .Site.Params.email }}" class="btn">Email</a>
+          <a href="{{ .Site.Params.scholar }}" class="btn" target="_blank">Google Scholar</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{{ end }}

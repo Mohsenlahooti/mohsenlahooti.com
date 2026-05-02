@@ -1,0 +1,16 @@
+{{ define "main" }}
+<section class="section-page">
+  <div class="container">
+    <h1 class="page-title">{{ .Title }}</h1>
+    <div class="page-content">
+      {{ .Content }}
+      {{ if eq .Title "Research" }}
+      <p class="section-placeholder">Coming soon.</p>
+      {{ end }}
+      {{ if eq .Title "Contact" }}
+      <p class="section-placeholder">Coming soon.</p>
+      {{ end }}
+    </div>
+  </div>
+</section>
+{{ end }}
