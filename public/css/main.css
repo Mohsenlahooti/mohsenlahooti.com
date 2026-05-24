@@ -46,6 +46,10 @@ p { margin-bottom: 1rem; }
   padding: 0 2rem;
 }
 
+main {
+    padding-top: 56px;
+}
+
 /* ─── Nav ───────────────────────────────────────────────────── */
 .site-nav {
   position: fixed;
@@ -473,4 +477,74 @@ p { margin-bottom: 1rem; }
     width: 100%;
     max-width: 240px;
   }
+}
+
+/* ─── Hero Strip ────────────────────────────────────────────── */
+/*
+ * Sits between the nav and the about section on the landing page only.
+ *
+ * TO CHANGE HEIGHT:
+ *   Edit the height value below. Examples:
+ *   35vh  = 35% of the viewport height (current default — visible without scrolling)
+ *   50vh  = half the screen
+ *   100vh = full screen
+ *
+ * TO CHANGE POSITION:
+ *   In index.html, cut the entire <div class="hero-strip"> block
+ *   and paste it before or after the <section class="section-about"> block.
+ */
+/*
+.hero-strip {
+*  position: relative;
+*  width: 100%;
+*  height: 35vh;       
+*  margin-top: 56px;   
+*  overflow: hidden;
+*  background: #0a0c10;
+*/
+.hero-strip{
+    position: relative;
+    height: 45vh;              /* ← reduce this if still too tall */
+    width: 100vw;
+    max-width: none; /* 960px to match the container width */
+    height: 45vh;
+    margin-top: 56px;
+    margin-left: calc(-50vw + 50%);
+    padding: 0;
+    overflow: hidden;
+/*    margin-right: auto;*/
+}
+
+/*
+ * The media (video or GIF) fills the strip and is cropped to fit.
+ * object-position controls which part of the video is visible when cropped.
+ * Default "center center" shows the middle — change to "top center" or
+ * "center 30%" to shift the crop point.
+ */
+.hero-media {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+
+/*
+ * Optional caption overlay — shown when .hero-overlay is uncommented in index.html.
+ * Sits at the bottom of the hero strip.
+ */
+.hero-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem 2rem;
+  background: linear-gradient(transparent, rgba(10, 12, 16, 0.75));
+}
+
+.hero-caption {
+  font-size: 0.75rem;
+  color: #8b949e;
+  letter-spacing: 0.06em;
+  margin: 0;
 }

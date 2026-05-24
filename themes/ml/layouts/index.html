@@ -1,9 +1,37 @@
 {{ define "main" }}
+
+<!--
+  HERO SECTION
+  ============
+  A visual strip below the nav showing a looping video or GIF of your research.
+  Appears on the landing page only.
+
+  To change the media:
+  - Video: replace /video/hero.mp4 with your file path
+  - GIF:   replace the <video> block with <img src="/images/hero.gif" class="hero-media">
+
+  To change hero HEIGHT: edit --hero-height in the style block below.
+  To change hero POSITION: it sits between the nav and the about section by default.
+    - To move it below the about section: cut this block and paste it after section-about.
+    - To make it full screen: set --hero-height to 100vh.
+-->
+<div class="hero-strip">
+  <video autoplay loop muted playsinline class="hero-media">
+    <source src="/video/hero.mp4" type="video/mp4">
+  </video>
+  <!--
+    Optional text overlay — uncomment to use:
+    <div class="hero-overlay">
+      <p class="hero-caption">Direct numerical simulation of a vertical axis wind turbine</p>
+    </div>
+  -->
+</div>
+
 <section class="section-about">
   <div class="container">
     <div class="about-grid">
 
-      <!-- Left column: photo + links -->
+      <!-- Left column: photo + stacked links -->
       <div class="about-left">
         <div class="about-photo">
           <img src="/images/profile.jpg" alt="{{ .Site.Params.author }}">
@@ -12,10 +40,16 @@
           <a href="/cv.pdf" class="left-btn" target="_blank">CV</a>
           <a href="mailto:{{ .Site.Params.email }}" class="left-btn">Email</a>
           <a href="{{ .Site.Params.scholar }}" class="left-btn" target="_blank">Google Scholar</a>
+          <!-- Social media — text only: -->
+          <!-- {{ with .Site.Params.twitter }}<a href="{{ . }}" class="left-btn" target="_blank">Twitter</a>{{ end }} -->
+          <!-- Icon only (SVG in static/images/icons/): -->
+          <!-- {{ with .Site.Params.linkedin }}<a href="{{ . }}" class="left-btn left-btn-icon" target="_blank"><img src="/images/icons/linkedin.svg" alt="LinkedIn"></a>{{ end }} -->
+          <!-- Icon + text: -->
+          <!-- {{ with .Site.Params.github }}<a href="{{ . }}" class="left-btn" target="_blank"><img src="/images/icons/github.svg" alt="">GitHub</a>{{ end }} -->
         </div>
       </div>
 
-      <!-- Right column: name, about, news -->
+      <!-- Right column: name, bio, news -->
       <div class="about-right">
         <div class="about-header">
           <h1>{{ .Site.Params.author }}</h1>
